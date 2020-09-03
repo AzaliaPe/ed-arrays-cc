@@ -82,30 +82,65 @@ int main()
     //     }
     // }; 
 
-    int** matrix2Ptr
+    // int** matrix2Ptr
+    // {
+    //     new int*[3]
+    //     {
+    //         new int[3]{1, 2, 3}, //elemento 0
+    //         new int[3]{4, 5, 6}, //elemento 1
+    //         new int[3]{7, 8, 9}, //elemento 2
+    //     }
+    // };
+    // // std::cout << *(*(matrix2Ptr+2))+1 << std::endl;
+
+    // for(int i{}; i < 3; i++)
+    // {
+    //     for(int j{}; j < 3; j++)
+    //     {
+    //         std::cout << *(*(matrix2Ptr + i)) +  j<< "\t";
+    //     }
+    //     std::cout << std::endl;
+    // }
+
+
+    //TAREA MATRIZ DE 3
+    int*** matrix3Ptr
     {
-        new int*[3]
+        new int**[3]
         {
-            new int[3] // esto es lo mismo que tener new int[3]{1, 2, 3}, 
+            new int*[3]
             {
-                1, 
-                2,
-                3
-            }, //elemento 0
-            new int[3]{4, 5, 6}, //elemento 1
-            new int[3]{7, 8, 9}, //elemento 2
+                new int[3]{1, 2, 3},
+                new int[3]{4, 5, 6},
+                new int[3]{7, 8, 9}
+            }, 
+            new int*[3]
+            {
+                new int[3]{10, 11, 12},
+                new int[3]{13, 14, 15},
+                new int[3]{16, 17, 18}
+            }, 
+            new int*[3]
+            {
+                new int[3]{19, 20, 21},
+                new int[3]{22, 23, 24},
+                new int[3]{25, 26, 27}
+            }
         }
     };
-    // std::cout << *(*(matrix2Ptr+2))+1 << std::endl;
-
     for(int i{}; i < 3; i++)
     {
         for(int j{}; j < 3; j++)
         {
-            std::cout << *(*(matrix2Ptr + i)) +  j<< "\t";
+            for(int a{}; a < 3; a++)
+            {
+                std::cout << *(*(*(matrix3Ptr + i) + j)) + a << "\t";
+            }
+            std::cout << std::endl;
         }
         std::cout << std::endl;
     }
+
     
     // int* ptrArray{new int[6]{5, 3, 8, 2, 9, 1}};
     // std::cout <<"PtrArray memmory: " << &ptrArray <<std::endl;
